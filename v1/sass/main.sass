@@ -1,0 +1,529 @@
+@import "bourbon"
+@import "vars.sass"
+
+//Load Libs SASS
+@import "app/libs/animate/animate.sass"
+
+//fonts
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:400,300,700&subset=latin,cyrillic-ext)
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic-ext,latin-ext)
+
+$orange: #f48b3d
+$gray: #838383
+
+$trans: 0.5s ease-out
+
+$thin: RobotoThin
+$light: RobotoLight
+$sans: 'Open Sans'
+$com: 'Comfortaa'
+
+.clear
+	float: none
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+body
+	position: relative
+	border-top: 2px solid $gray
+	box-shadow: 2px 2px 4px $gray, inset 5px 1px 4px $orange;
+
+p
+	margin: 0
+
+h2
+	font-size: 50px
+	color: $orange
+	font-weight: 500
+	font-family: $sans
+	text-transform: uppercase
+	text-shadow: 0 0 0, 1px 1px 10px $orange
+
+
+#top_header
+	z-index: 3
+	background-color: #fff
+	width: 100%
+	height: 100vh
+	//background: url(../img/pixel.png) repeat, url(../img/bg8.jpg) center  
+	//background-image: url(../img/pixel.png), url(../img/bg8.jpg) 
+	font-family: $thin
+	text-align: center
+	position: relative
+
+.mobile
+	color: $orange
+	text-align: center
+	position: absolute
+	width: 100%
+	top: 0
+	z-index: 999
+	display: none
+
+.logo
+	height: 84px
+	width: 239px
+	background-image: url("../img/logo.png")
+	background-repeat: no-repeat
+	//border: 2px solid $gray
+	color: $gray
+	display: inline-block
+	//margin-top: 100px
+	margin-top: 5vh
+	//padding: 5px 15px
+	//line-height: 70px
+	font-size: 72px
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6)
+	@include transition(0.3s)
+	& a 
+		color: $gray
+	&:hover
+		background-image: url("../img/logo_hover.png")
+		//border: 2px solid $orange
+		@include transform(scale(0.95))
+
+.title
+	margin-top: 20vh
+	font-size: 60px
+	font-weight: 500
+	text-transform: uppercase
+	font-family: $sans
+	//font-family: $com
+	color: $orange
+	text-shadow: 0 0 0, 0px 1px 6px $orange
+
+//menu
+.x
+	position: fixed
+	//bottom: 45px
+	bottom: 4vh
+	bottom: 4%
+	width: 194px
+	height: 194px
+	background-image: url("../img/x1.png")	
+	background-size: contain
+	background-repeat: no-repeat
+	margin-left: auto
+	margin-right: auto
+	left: 50%
+	margin-left: -97px
+	font-family: $thin
+	font-family: RobotoThin
+	text-transform: uppercase
+	font-size: 25px
+	font-weight: 300
+	color: $gray
+	z-index: 9999
+	text-align: center
+	@include transition($trans)
+
+a, a:visited, a:focus
+	
+	text-decoration: none
+	color: $gray
+	outline: none
+	@include transition($trans)
+	&:hover
+		color: $orange
+		text-decoration: none
+
+.a1
+	white-space: pre	
+	& i 
+		display: block
+	&:hover .triangle
+		border-color: transparent transparent $orange transparent
+
+.triangle 
+	display: block
+	margin-left: auto
+	margin-right: auto
+	@include transition($trans)
+	width: 0
+	height: 0
+	border-style: solid
+	border-width: 0 12.5px 21.7px 12.5px
+	border-color: transparent transparent $gray transparent
+		
+.a4 i 
+	display: block
+
+.menu_2
+	padding-top: 12px
+
+.a2
+	margin-left: -80px
+
+.a2 i
+	margin-left: 5px
+
+.ser
+	margin-left: 5px
+	font-family: $com
+	font-weight: 700
+	
+.a3
+	//margin-left: 10px
+	
+.a3 i 
+	display: inline
+	margin-right: 5px
+	margin-left: 15px
+	
+.menu_3
+	//margin-top: 40px
+	margin-top: 15px
+
+#second_fa
+	display: none
+
+//pack
+.pack
+	position: absolute
+	bottom: 10px
+	left: 10px
+	z-index: 999999999
+	width: 30px
+	@include animation(packman)
+	@include animation-iteration-count(infinite)
+	@include animation-duration(8s)
+	@include animation-direction(alternate)
+	@include animation-timing-function(linear)
+	//@include transform-origin(left center) 
+	&:hover
+		display: none
+		
+@include keyframes (packman) 
+	0%
+		left: 10px
+	100%
+		@include calc(left, "100% - 40px")
+
+.section:first-child
+	background-color: $orange
+
+.light
+	position: absolute
+	width: 250px
+	left: 10vw
+	//top: 35vh
+	@include calc(top, "50% - 125px")
+	opacity: 0
+	@include animation(light_on)
+	@include animation-iteration-count(infinite)
+	@include animation-duration(10s)
+	@include animation-direction(alternate)
+	@include animation-timing-function(linear)
+
+@include keyframes (light_on) 
+	0%
+		opacity: 0
+	35%
+		opacity: 0
+	50%
+		opacity: 0.15
+	65
+		opacity: 0
+	100%
+		opacity: 0
+
+//slide-nav
+#fp-nav ul li a span, .fp-slidesNav ul li a span
+	background-color: $orange !important
+
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span
+	height: 2px !important
+	width: 14px !important
+	border-radius: 0 !important
+	margin-top: -2px !important	
+
+#fp-nav ul li .fp-tooltip
+	top: -5px !important
+
+//service
+.service
+	background: url("../img/bg5.jpg") center bottom 
+	background-size: cover
+	color: $orange
+
+.serv_wrapper
+	text-align: center
+	font-size: 38px
+	font-family: $com
+	text-transform: uppercase
+	& h2
+		font-size: 38px
+		color: $orange
+		margin-bottom: 0
+		margin-top: 10px
+	& p 
+		font-size: 20px
+		color: #fff
+		line-height: 1.3
+		//font-weight: 100
+	& ul
+		font-size: 20px
+		color: #fff
+		//width: 200px
+		margin: 0 auto
+		text-align: left 
+		display: inline-block
+		list-style-type: square
+	& h3
+		font-size: 27px
+		margin-top: 0
+		white-space: pre
+		display: block	
+		
+.design
+	font-family: $com
+	& ul
+		list-style-type: disc
+		margin-left: 35px
+
+.design h3
+	vertical-align: bottom
+	width: 100%
+	margin-left: 20px
+	
+.dev, .seo 
+	position: relative
+	font-family: $light
+	//background-image: url("../img/pixel.png") 
+	//z-index: 2
+	& p 
+		font-family: $light
+	& ul
+		list-style-type: square
+		& li 
+			margin-left: 60px
+
+p.dev2
+	font-size: 18px
+	color: $gray
+	white-space: pre
+	text-transform: none
+	//font-weight: 100
+
+.dev3 
+	font-size: 17px
+	color: $gray
+	text-transform: none
+	white-space: pre
+	text-align: left
+	display: inline-block
+	margin-left: auto
+	margin-right: auto
+	margin-left: 5px
+	//font-weight: 100
+
+.dev h3
+	margin-left: -40px
+	
+
+.dev .dev3
+	margin-left: 160px
+	
+//
+.example
+	background: #696969, url("../img/pixel.png"), url("../img/bg7.jpg") center center  
+	text-align: center
+	//background-size: cover
+	& h2
+		font-size: 50px
+		color: $orange
+		font-weight: 500
+		font-family: $sans
+		text-transform: uppercase
+		text-shadow: 0 0 0, 1px 1px 10px $orange
+	
+.example_wrapper
+	text-align: center
+
+.owl-theme .owl-controls .owl-page span
+	background: $gray !important
+
+.owl-dot
+	background-color: $gray
+	width: 12px
+	height: 12px
+	border-radius: 50%
+	display: inline-block
+	margin-right: 8px
+	margin-left: 8px
+	margin-top: 15px
+
+.owl-dot.active
+	background-color: $orange
+
+.owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span
+	background: $orange !important
+
+.slider
+	width: 100%
+	max-width: 1200px
+	height: 500px
+	text-align: center
+	@include transition($trans)
+	& a 
+		@include transition($trans)
+	& a:hover p
+		color: $gray
+		@include transform(translate(0,-70px))
+		background-color: $orange
+		height: 60px
+		width: 350px
+	& .img_wrapper
+		width: 350px
+		height: 200px
+		overflow: hidden
+		box-shadow: 2px 2px 4px $gray, inset 0 1px 4px rgba(255, 255, 255, 0.34);
+	& a:hover img
+		opacity: 0.65
+		@include transform(scale(1.2))
+	& img
+		//border: 1px solid $gray
+		-o-object-fit: fill
+		width: 100%
+		height: 100%
+		@include transition($trans)
+		&:hover
+			opacity: 0.65
+	& p
+		margin-top: 10px
+		color: #fff
+		font-family: $light
+		text-transform: uppercase
+		font-size: 25px
+		line-height: 1.2
+		@include transition($trans)
+
+//order	
+.order
+	background: url("../img/pixel.png"), url("../img/bg6.jpg") center center  
+
+.order p 
+	color: white
+	font-size: 16px
+	font-family: $light
+	line-height: 1.3
+	text-align: center
+	//white-space: pre
+
+.order h2
+	text-align: center
+	margin-bottom: 10px
+	margin-top: 15px
+	
+.order .fp-tableCell
+	vertical-align: top
+
+//form
+#form
+	text-align: center
+	margin-top: 50px
+
+select, input, textarea
+	font-family: $light
+	font-size: 20px
+	display: block
+	padding: 5px 15px
+	width: 87%
+	max-width: 500px
+	margin-left: auto
+	margin-right: auto
+	background-color: rgba(255,255,255,0.8)
+	color: $gray
+	outline: none
+	border: none
+	margin-bottom: 15px
+	@include transition($trans)
+	box-shadow: 2px 2px 4px $gray, inset 0 1px 4px rgba(255, 255, 255, 0.34);
+	&:focus
+		max-width: 515px
+		width: 92%
+		//border: $orange 2px solid
+	@include placeholder
+		text-transform: uppercase
+		color: $gray
+		opacity: 1
+	
+textarea
+	resize: none
+
+input[type="submit"]
+	background-color: $orange
+	text-transform: uppercase
+	&:hover
+		background-color: $gray
+		color: #000
+		max-width: 515px
+		width: 92%
+
+select
+	background-color: $gray
+	text-transform: uppercase
+	color: #000
+
+select option
+	background-color: #fff
+	border-bottom: $gray 1px solid
+
+//footer
+footer
+	text-align: center
+	position: absolute
+	color: $gray
+	font-family: $thin
+	font-weight: 600
+	bottom: 0
+	z-index: 2
+	width: 100%
+	font-size: 15px
+
+.part
+	color: $orange
+	font-size: 20px
+	padding-top: 120px
+	padding-left: 40px
+	font-family: $light
+	text-transform: uppercase	
+
+.footer_partners
+	height: 260px
+	position: absolute
+	bottom: 0
+	left: 50%
+	margin-left: -350px
+	width: 800px
+	z-index: 3
+	
+.partners, .center, .smth	
+	display: inline-block
+	width: auto
+	vertical-align: bottom
+	padding-bottom: 20px
+	text-align: center
+	@include transition($trans)
+	&:hover
+		opacity: 0.5
+		@include transform(scale(1.05))
+	
+.partners img
+	margin-left: -40px
+	
+.smth	
+	padding-bottom: 40px
+
+.center
+	width: 350px
+	//height: 260px
+
+
+//ALWAYS END
+@import "media"

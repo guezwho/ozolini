@@ -1,0 +1,27 @@
+User-agent: *
+Disallow: /img
+Disallow: /404
+
+User-agent: Googlebot
+Disallow: /js
+Disallow: /404
+Disallow: /img
+Disallow: /css
+Disallow: /fonts
+Disallow: /libs
+Disallow: /mail.php
+Disallow: /mail2.php
+
+User-agent: Yandex
+Disallow: /js
+Disallow: /404
+Disallow: /img
+Disallow: /css
+Disallow: /fonts
+Disallow: /libs
+Disallow: /mail.php
+Disallow: /mail2.php
+
+Host: ozolini.com.ua
+
+Sitemap: http://ozolini.com.ua/sitemap.xml
