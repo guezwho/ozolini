@@ -20,64 +20,68 @@ $(function() {
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
 	//fullpage
-	$('#fullpage').fullpage({
-        //Navigation
-        menu: '#menu',
-        lockAnchors: false,
-        anchors:['title', 'service', 'example', 'order'],
-        navigation: true,
-        navigationPosition: 'right',
-        navigationTooltips: ['Ozolini', 'Услуги', 'Примеры', 'Заказать'],
-        showActiveTooltip: false,
-        slidesNavigation: true,
-        slidesNavPosition: 'bottom',
+    if (window.innerWidth > 768) {
 
-        //Scrolling
-        css3: true,
-        scrollingSpeed: 700,
-        autoScrolling: true,
-        fitToSection: true,
-        fitToSectionDelay: 1000,
-        scrollBar: false,
-        easing: 'easeInOutCubic',
-        easingcss3: 'ease',
-        loopBottom: false,
-        loopTop: false,
-        loopHorizontal: true,
-        continuousVertical: false,
-        normalScrollElements: '#element1, .element2',
-        scrollOverflow: false,
-        touchSensitivity: 15,
-        normalScrollElementTouchThreshold: 5,
+    	$('#fullpage').fullpage({
+            //Navigation
+            menu: '#menu',
+            lockAnchors: false,
+            anchors:['title', 'service', 'example', 'order'],
+            navigation: true,
+            navigationPosition: 'right',
+            navigationTooltips: ['Ozolini', 'Услуги', 'Примеры', 'Заказать'],
+            showActiveTooltip: false,
+            slidesNavigation: true,
+            slidesNavPosition: 'bottom',
 
-        //Accessibility
-        keyboardScrolling: true,
-        animateAnchor: true,
-        recordHistory: true,
+            //Scrolling
+            css3: true,
+            scrollingSpeed: 700,
+            autoScrolling: true,
+            fitToSection: true,
+            fitToSectionDelay: 1000,
+            scrollBar: false,
+            easing: 'easeInOutCubic',
+            easingcss3: 'ease',
+            loopBottom: false,
+            loopTop: false,
+            loopHorizontal: true,
+            continuousVertical: false,
+            normalScrollElements: '#element1, .element2',
+            scrollOverflow: false,
+            touchSensitivity: 15,
+            normalScrollElementTouchThreshold: 5,
 
-        //Design
-        controlArrows: true,
-        verticalCentered: true,
-        resize : false,
-        sectionsColor : ['#fff'],
-        //paddingTop: '2px',
-        //paddingBottom: '2px',
-        fixedElements: '#header, .footer',
-        responsiveWidth: 0,
-        responsiveHeight: 0,
+            //Accessibility
+            keyboardScrolling: true,
+            animateAnchor: true,
+            recordHistory: true,
 
-        //Custom selectors
-        sectionSelector: '.section',
-        slideSelector: '.slide',
+            //Design
+            controlArrows: true,
+            verticalCentered: true,
+            resize : false,
+            sectionsColor : ['#fff'],
+            //paddingTop: '2px',
+            //paddingBottom: '2px',
+            fixedElements: '#header, .footer',
+            responsiveWidth: 0,
+            responsiveHeight: 0,
 
-        //events
-        onLeave: function(index, nextIndex, direction){},
-        afterLoad: function(anchorLink, index){},
-        afterRender: function(){},
-        afterResize: function(){},
-        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){},
-    });
+            //Custom selectors
+            sectionSelector: '.section',
+            slideSelector: '.slide',
+
+            //events
+            onLeave: function(index, nextIndex, direction){},
+            afterLoad: function(anchorLink, index){},
+            afterRender: function(){},
+            afterResize: function(){},
+            afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+            onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){},
+        });
+
+    }
 
     //owl
     $(".slider").owlCarousel( {

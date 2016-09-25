@@ -184,6 +184,7 @@ a, a:visited, a:focus
 
 //pack
 .pack
+	display: none
 	position: absolute
 	bottom: 10px
 	left: 10px
@@ -216,7 +217,7 @@ a, a:visited, a:focus
 	opacity: 0
 	@include animation(light_on)
 	@include animation-iteration-count(infinite)
-	@include animation-duration(10s)
+	@include animation-duration(5s)
 	@include animation-direction(alternate)
 	@include animation-timing-function(linear)
 
@@ -224,11 +225,11 @@ a, a:visited, a:focus
 	0%
 		opacity: 0
 	35%
-		opacity: 0
-	50%
 		opacity: 0.15
-	65
-		opacity: 0
+	50%
+		opacity: 0.25
+	65%
+		opacity: 0.15
 	100%
 		opacity: 0
 
